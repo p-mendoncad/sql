@@ -1,0 +1,81 @@
+Read = SELECT __ Create = INSERT __ Update = UPDATE __ Delete = DELETE
+
+CREATE DATABASE xxxxx; -> Cria um banco de dados.
+
+DROP DATABASE xxxxx; -> Remove um banco de dados.
+
+USE xxxxx; -> Para selecionar um banco de dados a ser utilizado.
+
+CREATE TABLE yyyyy{
+	nomeDaColuna TIPO(limite de caracteres)
+}; -> Cria uma tabela.
+
+DROP TABLE yyyyy; -> Para deletar uma tabela.
+
+Tipos de Dados:
+Texto = VARCHAR(x)
+Número = INT(x)
+Datas = DATE
+
+ALTER TABLE yyyyy ADD COLUMN nomeDaColuna TIPO(x); -> Adiciona uma nova coluna à tabela.
+
+SELECT * FROM yyyyy; -> Seleciona todos os dados de uma determinada tabela e entrega os dados buscados;
+
+SELECT nomeDaColuna FROM yyyyy; -> Seleciona todos os dados de uma coluna específica de uma determinada tabela.
+
+INSERT INTO yyyyy (colunaTexto, colunaData, colunaNumero)
+VALUES("aaaa", "0000-00-00", 000); -> Preenche uma linha da coluna
+
+SELECT * FROM yyyy
+WHERE colunaTexto = "bbbb"; Ou WHERE colunaNumero > 100; -> Seleciona com filtro as linhas de uma tabela baseado no conteúdo de uma determinada coluna.
+
+UPDATE yyyyy SET colunaNumero = novoNumero WHERE colunaTexto = "aaaa"; -> Atualiza os dados de uma coluna, caso o where não seja eficiente pode ocorrer erros. Faz-se necessário a existência de uma primary key.
+
+DELETE FROM yyyyy WHERE colunaTexto = "aaaa"; -> Remove  uma linha baseado no conteúdo de uma coluna.
+
+DELETE e UPDATE deve ser utilizado com WHERE.
+
+------------------------------------------------------------------------
+
+*CONSTRAINTS*
+
+CREATE TABLE yyyyy{
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	colunaTexto VARCHAR(x),
+	colunaData DATE,
+	colunaNumero INT,
+
+}; -> Cria a tabela com id
+
+CREATE TABLE yyyyy{
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	colunaTexto VARCHAR(x),
+	colunaData DATE,
+	colunaNumero INT,
+	yyyyy_id INT NOT NULL,
+	FOREIGN KEY (yyyyy-id) REFERENCES yyyyy(id)
+
+};
+
+Os comandos SELECT, INSERT, UPDATE, DELETE são as principais operações que utilizamos dentro de um banco  de dados ao operarmos uma tabela dentro de um banco de dados, onde cada um deles desempenha uma determinada função escrita a seguir.
+
+SELECT: Seleciona as colunas de uma tabela e as exibe, dessa forma permitindo a leitura dos dados contidos dentro da mesma.
+
+INSERT: Cria e preenche uma nova linha na tabela.
+
+UPDATE: Permite substiuir os dados antigos pelos dados novos passados pela instrução.
+
+DELETE: Apaga uma linha, baseado no WHERE o qual o conteúdo inserido contar na linha.
+
+
+
+
+
+
+
+
+
+
+
+
+
